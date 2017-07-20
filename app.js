@@ -1,6 +1,7 @@
 //Functions
 const setMainArray = require('./functions/setMainArray');
 const mainArrFunc = require('./functions/mainArray');
+const mainArrFuncDel=require('./functions/deleteString');
 
 const stdin = process.openStdin();
 
@@ -27,6 +28,8 @@ stdin.addListener("data", function(d) {
         case 'prepend':
             mainArr = mainArrFunc.prepend(mainArr, inputTokens[1]);
             break;
+        case 'delete':
+            mainArr = mainArrFuncDel.del(mainArr,inputTokens[1]);
     }
 
     console.log(mainArr.join(' '));
