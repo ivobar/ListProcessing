@@ -1,5 +1,6 @@
 //Functions
 const setMainArray = require('./functions/setMainArray');
+const mainArrFunc = require('./functions/mainArray');
 
 const stdin = process.openStdin();
 
@@ -17,6 +18,18 @@ stdin.addListener("data", function(d) {
         return;
     }
 
+    inputTokens = input.split(' ');
+
+    switch (inputTokens[0]) {
+        case 'append':
+            mainArr = mainArrFunc.append(mainArr, inputTokens[1]);
+            break;
+        case 'prepend':
+            mainArr = mainArrFunc.prepend(mainArr, inputTokens[1]);
+            break;
+    }
+
+    console.log(mainArr.join(' '));
 
     //If the input is 'end' then kill the script process, ending the program.
     if (input === "end") {
