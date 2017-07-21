@@ -4,6 +4,8 @@ const mainArrFunc = require('./functions/mainArray');
 const mainArrFuncDel=require('./functions/deleteString');
 const mainArrFuncRev=require('./functions/reverseArray');
 const mainArrFuncIns=require('./functions/insert');
+const mainArrFuncCount=require('./functions/countArray');
+const mainArrFuncSort=require('./functions/sortArray');
 
 const stdin = process.openStdin();
 
@@ -38,6 +40,12 @@ stdin.addListener("data", function(d) {
             break;
         case 'insert':
             mainArr=mainArrFuncIns.insertStr(mainArr,inputTokens[1],inputTokens[2]);
+            break;
+        case 'count':
+            mainArrFuncCount.countArr(mainArr,inputTokens[1]);
+            break;
+        case 'sort':
+            mainArr=mainArrFuncSort.sortArray(mainArr);
             break;
     }
 
