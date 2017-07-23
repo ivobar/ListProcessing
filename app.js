@@ -6,6 +6,8 @@ const mainArrFuncRev=require('./functions/reverseArray');
 const mainArrFuncIns=require('./functions/insert');
 const mainArrFuncCount=require('./functions/countArray');
 const mainArrFuncSort=require('./functions/sortArray');
+const mainArrFuncRollLeft=require('./functions/rollLeft');
+const mainArrFuncRollRight=require('./functions/rollRight');
 
 const stdin = process.openStdin();
 
@@ -47,6 +49,11 @@ stdin.addListener("data", function(d) {
         case 'sort':
             mainArr=mainArrFuncSort.sortArray(mainArr);
             break;
+        case 'roll left':
+            mainArr=mainArrFuncRollLeft.rollArray(mainArr);
+            break;
+        case 'roll right':
+            mainArr=mainArrFuncRollRight.rollArrayRight(mainArr);
     }
 
     console.log(mainArr.join(' '));
